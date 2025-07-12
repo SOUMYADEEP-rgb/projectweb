@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional information</title>
+    <style>
+        *{
+            color: white;
+        }
+        .fix {
+            position: relative;
+            left: 800px;
+            bottom: 200px;
+        }
+        .tab {
+            position: relative;
+            left: 420px;
+        }
+        table, th, td {
+            border: 1.5px solid whitesmoke;
+        }
+        .tot {
+            position: relative;
+            bottom: 130px;
+        }
+        .h_learn {
+            position: relative;
+            bottom: 50px;
+            font-size: 75px;
+        }
+        body{
+            background-image: url(imgc7.jpg);
+            background-size:cover;
+            overflow-x: hidden;
+        }
+        .next{
+            position: relative;
+            left: 1450px;
+        }
+        #startMessage {
+            text-align: center;
+            font-size: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form id="infoForm">
+        <label><h2>How did you get to know about our website?</h2></label>
+        <input type="checkbox" id="friends" name="friends" value="friends">Friends<br>
+        <input type="checkbox" id="ADs" name="ADs" value="ADs">Advertisements<br>
+        <input type="checkbox" id="search_engine" name="search_engine" value="search_engine">Search Engine<br>
+        <input type="checkbox" id="social_media" name="social_media" value="social_media">Social Media<br>
+        <input type="checkbox" id="events" name="events" value="events">Events<br>
+        <input type="checkbox" id="news" name="news" value="news">News Articles<br>
+        <input type="checkbox" id="other" name="other" value="other">Other<br>
+        <div class="fix">
+            <label><h2>Fix your daily hours of Learning</h2></label>
+            <input type="radio" id="15" name="learning_time" value="15">15 minutes<br>
+            <input type="radio" id="30" name="learning_time" value="30">30 minutes<br>
+            <input type="radio" id="45" name="learning_time" value="45">45 minutes<br>
+            <input type="radio" id="60" name="learning_time" value="60">1 hr<br><br>
+            <input type="SUBMIT" style="color: black; text-align: center;">
+        </div>
+       
+    </form>
+        <div class="tot">
+            <h1 align="center">For any enquiries please contact the following offices</h1>
+            <div class="tab">
+                <table>
+                    <tr>
+                        <th colspan="2" width="150">Serial No.</th>
+                        <th colspan="2" width="150">Branch</th>
+                        <th colspan="2" width="150">Address</th>
+                        <th colspan="2" width="150">Contact number</th>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">1</td>
+                        <td colspan="2" align="center">Bengaluru</td>
+                        <td colspan="2" align="center">HSR Layout</td>
+                        <td colspan="2" align="center">8693429638</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">2</td>
+                        <td colspan="2" align="center">Kolkata</td>
+                        <td colspan="2" align="center">Newtown</td>
+                        <td colspan="2" align="center">8693424538</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">3</td>
+                        <td colspan="2" align="center">Chennai</td>
+                        <td colspan="2" align="center">Anna Nagar</td>
+                        <td colspan="2" align="center">8693429435</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">4</td>
+                        <td colspan="2" align="center">Mumbai</td>
+                        <td colspan="2" align="center">Thane</td>
+                        <td colspan="2" align="center">8693423638</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">5</td>
+                        <td colspan="2" align="center">New Delhi</td>
+                        <td colspan="2" align="center">Chandni Chowk</td>
+                        <td colspan="2" align="center">8693423638</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <h1 align="center" class="h_learn">HAPPY LEARNING......</h1>
+        <h1 id="startMessage">LET'S GET STARTED!</h1>
+        <a href="file:///C:/Users/soumy/Desktop/project_web/content.html" target="_blank"><h3 class="next">Next</h3></a>
+
+    <script>
+        document.getElementById("infoForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("startMessage").style.display = "block";
+        });
+    </script>
+</body>
+</html>

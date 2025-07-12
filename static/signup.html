@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Sign-Up Page</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <h1 style="font-size: 40px; text-align: center;"><u>Course Registration Page</u></h1>
+    <form id="signupForm">
+        <label><h3>First Name</h3></label>
+        <input type="text" id="fn" name="firstname" placeholder="Enter your first name">
+        <br><br>
+        
+        <label><h3>Last Name</h3></label>
+        <input type="text" id="ln" name="lastname" placeholder="Enter your surname" >
+        <br><br>
+        
+        <label><h3>Gender</h3></label>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="neutral"> Neutral
+        <br><br>
+        
+        <label><h3>Date of Birth</h3></label>
+        <input type="date" id="dob" name="dob" >
+        <br><br>
+        
+        <label><h3>Educational Background</h3></label>
+        <select id="education" name="education" >
+            <option value="" disabled selected>Select current educational qualifications</option>
+            <option value="secondary">Secondary (Class 10th)</option>
+            <option value="senior_secondary">Senior Secondary (Class 12th)</option>
+            <optgroup label="Graduation">
+                <option value="btech">B.Tech</option>
+                <option value="bsc">B.Sc</option>
+                <option value="bba">BBA</option>
+                <option value="other_graduation">Others</option>
+            </optgroup>
+            <optgroup label="Post Graduation">
+                <option value="mtech">M.Tech</option>
+                <option value="msc">M.Sc</option>
+                <option value="mba">MBA</option>
+                <option value="other_post_graduation">Others</option>
+            </optgroup>
+        </select>
+        <br><br>
+        
+        <label><h3>Address</h3></label>
+        <textarea id="address" name="address" placeholder="Type your current address" ></textarea>
+        <br><br>
+        
+        <label><h3>Email</h3></label>
+        <input type="text" id="email" name="email" placeholder="Enter a valid email address" >
+        <br><br>
+        
+        <label><h3>Phone Number</h3></label>
+        <input type="text" id="phone" name="number" placeholder="Enter your mobile number">
+        <br><br>
+        
+      <button type="submit" >Sign Up</button>
+        <input type="reset" value="Reset">
+        <a href="addinfo.html"> <h5 id="hqw" style="float: right; color: white;">NEXT PAGE</h5></a> 
+    </form>
+    
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            let firstName = document.getElementById("fn").value.trim();
+            let lastName = document.getElementById("ln").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let dob = document.getElementById("dob").value;
+            let education = document.getElementById("education").value;
+            let address = document.getElementById("address").value.trim();
+            let genderChecked = document.querySelector('input[name="gender"]:checked');
+            
+            if (firstName === "") {
+                alert("Please enter a non-blank first name.");
+                event.preventDefault();
+                return;
+            }
+            if (lastName === "") {
+                alert("Please enter a non-blank last name.");
+                event.preventDefault();
+                return;
+            }
+            
+            if (!genderChecked) {
+                alert("Please select a gender.");
+                event.preventDefault();
+                return;
+            }
+            
+            if (dob === "") {
+                alert("Please enter your date of birth.");
+                event.preventDefault();
+                return;
+            }
+            
+            if (education === "") {
+                alert("Please select your education level.");
+                event.preventDefault();
+                return;
+            }
+            
+            if (address === "") {
+                alert("Please enter your address.");
+                event.preventDefault();
+                return;
+            }
+            
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                event.preventDefault();
+                return;
+            }
+            
+            let phonePattern = /^[1-9]\d{9}$/;
+            if (phone == "" || !phonePattern.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                event.preventDefault();
+                return;
+            }
+            
+        });
+    </script>
+</body>
+</html>

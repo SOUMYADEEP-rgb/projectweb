@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            background-image: url(feeim.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            width: 50%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        fieldset {
+            border: none;
+            margin-bottom: 15px;
+        }
+        legend {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <form class="form-container" id="feedbackForm">
+        <h1>Feedback Form</h1>
+
+        <fieldset>
+            <legend>Rate your learning experience</legend>
+            <div class="radio-group">
+                <label><input type="radio" name="rate" value="1"> 1</label>
+                <label><input type="radio" name="rate" value="2"> 2</label>
+                <label><input type="radio" name="rate" value="3"> 3</label>
+                <label><input type="radio" name="rate" value="4"> 4</label>
+                <label><input type="radio" name="rate" value="5"> 5</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Would you recommend our website?</legend>
+            <div class="radio-group">
+                <label><input type="radio" name="recommend" value="definitely"> Definitely</label>
+                <label><input type="radio" name="recommend" value="likely"> Somewhat Likely</label>
+                <label><input type="radio" name="recommend" value="neutral"> Neutral</label>
+                <label><input type="radio" name="recommend" value="occasionally"> Occasionally</label>
+                <label><input type="radio" name="recommend" value="never"> Never</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Would you revisit our website?</legend>
+            <div class="radio-group">
+                <label><input type="radio" name="revisit" value="yes"> Yes</label>
+                <label><input type="radio" name="revisit" value="no"> No</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Any other general suggestions?</legend>
+            <input type="text" name="suggestions" placeholder="Please enter here">
+        </fieldset>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+            const rate = document.querySelector('input[name="rate"]:checked');
+            const recommend = document.querySelector('input[name="recommend"]:checked');
+            const revisit = document.querySelector('input[name="revisit"]:checked');
+            
+            if (!rate || !recommend || !revisit) {
+                alert("Please fill out all required fields.");
+                event.preventDefault();
+                return;
+            }
+            
+            if (rate.value !== "5" && rate.value !== "4") {
+                alert("SORRY, WE WILL TRY TO IMPROVE OUR PRESENTATION AND MATERIALS FOR LEARNING.");
+            } else {
+                alert("WE ARE GLAD THAT YOU LIKED IT!!!");
+            }
+            
+            alert("Thank you for your feedback!");
+        });
+    </script>
+
+</body>
+</html>

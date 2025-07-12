@@ -1,0 +1,50 @@
+*{
+    background-image: url(imgc2.jpg);
+    color: white;
+}
+.whole,.whole1{
+   display: grid;
+   grid-template-columns: 50% 50%;
+   grid-template-rows: 50% 50%;
+   grid-gap: 20px;
+   
+}
+img{
+    float: left;
+}
+.whole,.Sun,.whole1{
+    color: white;
+    font-size: medium;
+    background-image: url(imgc1.jpeg);
+    margin: 10px;
+    padding: 40px;
+    border-radius: 10px;
+    border: solid white;
+    border-width: 4px;
+  
+}
+.planet{
+    cursor:pointer;
+}
+.pla{
+    position: relative;
+    bottom: 25px;
+    margin-top: 40px;
+}
+.pla1{
+    position: relative;
+    top: 11px;
+}
+.out{
+    position: relative;
+    top: 15px;
+}
+.pla_img{
+    border-radius: 10px;
+}
+.sun{
+    font-size: large;
+}
+.qw{
+    text-align: right;
+}

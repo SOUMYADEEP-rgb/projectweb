@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var i=window.prompt("Enter decimal number","0");
+        var a=parseInt(i);
+        var binary = a.toString(2); 
+      var reversedBinary = binary.split('').reverse().join('');
+         var reversedDecimal = parseInt(reversedBinary, 2);
+
+            document.writeln("Original Decimal: " + a + 
+                  "\nBinary: " + binary );
+          document.writeln  ("\nReversed Binary: " + reversedBinary + 
+                  "\nReversed Decimal: " + reversedDecimal);
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

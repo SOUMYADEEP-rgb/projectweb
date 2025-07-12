@@ -1,0 +1,85 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(imgc6.jpeg);
+    font-family: Arial, sans-serif;
+    background-color: rgb(180, 171, 171);
+    color: #333;
+}
+
+form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+input[type="radio"] {
+    margin-right: 10px;
+}
+button,
+input[type="reset"] {
+    display: inline-block;
+    width: 48%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+input[type="reset"] {
+    background-color: #f44336;
+}
+
+button[type="submit"]:hover,
+input[type="reset"]:hover {
+    opacity: 0.9;
+}
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+select {
+    height: 40px;
+}
+    h1 {
+        font-size: 24px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+

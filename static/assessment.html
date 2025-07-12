@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Assessment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(54, 54, 143);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ffd700;
+            font-size: 2em;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .question h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .options li {
+            margin: 8px 0;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #ffd700;
+            color: #000;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background: #e6b800;
+        }
+        #disp{
+            font-size: 24px;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #er{
+            color: white;
+            float: right;
+            font-size: 10px;
+            margin-bottom: 30px;
+            margin-right: 3px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <form id="fm">
+    <div class="container">
+        <h1>Solar System Assessment</h1>
+        <div class="question">
+            <h2>1. What is the cause of a Solar Eclipse?</h2>
+            <ul class="options">
+                <input type="radio" name="q1" id="q1a"> A. The Moon comes between the Sun and Earth.<br>
+                <input type="radio" name="q1" id="q1b"> B. The Earth comes between the Sun and the Moon.<br>
+                <input type="radio" name="q1" id="q1c"> C. The Moon moves behind the Earth.<br>
+                <input type="radio" name="q1" id="q1d"> D. The Sun moves behind the Moon.<br>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>2. What type of Solar Eclipse occurs when the Sun is completely covered by the Moon?</h2>
+            <ul class="options">
+                <input type="radio" name="q2" id="q2a"> A. Partial Solar Eclipse<br>
+                <input type="radio" name="q2" id="q2b"> B. Total Solar Eclipse<br>
+               <input type="radio" name="q2" id="q2c"> C. Annular Solar Eclipse<br>
+                <input type="radio" name="q2" id="q2d"> D. Penumbral Solar Eclipse<br>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>3. During which type of Lunar Eclipse does the Moon appear red (Blood Moon)?</h2>
+            <ul class="options">
+                <input type="radio" name="q3" id="q3a"> A. Penumbral Lunar Eclipse<br>
+                <input type="radio" name="q3" id="q3b"> B. Total Lunar Eclipse<br>
+                <input type="radio" name="q3" id="q3c"> C. Partial Lunar Eclipse<br>
+                <input type="radio" name="q3" id="q3d"> D. Annular Lunar Eclipse<br>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>4. What causes the tail of a comet to always point away from the Sun?</h2>
+            <ul class="options">
+                <input type="radio" name="q4" id="q4a"> A. Earth's gravity<br>
+                <input type="radio" name="q4" id="q4b"> B. Solar wind<br>
+                    <input type="radio" name="q4" id="q4c"> C. Moon's orbit<br>
+                    <input type="radio" name="q4" id="q4d"> D. Magnetic field<br>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>5. Which of the following is the largest asteroid in the solar system?</h2>
+                <ul class="options">
+                   <input type="radio" name="q5" id="q5a"> A. Vesta<br>
+                    <input type="radio" name="q5" id="q5b"> B. Ceres<br>
+                    <input type="radio" name="q5" id="q5c"> C. Pallas<br>
+                    <input type="radio" name="q5" id="q5d"> D. Hygiea<br>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>6. Which planet is known as the "Red Planet"?</h2>
+                <ul class="options">
+                    <input type="radio" name="q6" id="q6a"> A. Venus<br>
+                   <input type="radio" name="q6" id="q6b"> B. Mars<br>
+                    <input type="radio" name="q6" id="q6c"> C. Mercury<br>
+                    <input type="radio" name="q6" id="q6d"> D. Saturn<br>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>7. What is the smallest planet in the Solar System?</h2>
+                <ul class="options">
+                   <input type="radio" name="q7" id="q7a"> A. Earth<br>
+                   <input type="radio" name="q7" id="q7b"> B. Venus<br>
+                   <input type="radio" name="q7" id="q7c"> C. Mars<br>
+                   <input type="radio" name="q7" id="q7d"> D. Mercury<br>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>8. Which planet has a thick, toxic atmosphere composed mainly of carbon dioxide?</h2>
+                <ul class="options">
+                   <input type="radio" name="q8" id="q8a"> A. Jupiter<br>
+                    <input type="radio" name="q8" id="q8b"> B. Venus<br>
+                    <input type="radio" name="q8" id="q8c"> C. Earth<br>
+                   <input type="radio" name="q8" id="q8d"> D. Saturn<br>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>9. What is Jupiter's Great Red Spot?</h2>
+                <ul class="options">
+                    <input type="radio" name="q9" id="q9a"> A. A massive storm<br>
+                    <input type="radio" name="q9" id="q9b"> B. A volcanic eruption<br>
+                   <input type="radio" name="q9" id="q9c"> C. A large mountain range<br>
+                   <input type="radio" name="q9" id="q9d"> D. An asteroid impact crater<br>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>10. Which planet is famous for its stunning ring system made of ice, rock, and dust?</h2>
+                <ul class="options">
+                    <input type="radio" name="q10" id="q10a"> A. Jupiter<br>
+                    <input type="radio" name="q10" id="q10b"> B. Saturn<br>
+                    <input type="radio" name="q10" id="q10c"> C. Mars<br>
+                    <input type="radio" name="q10" id="q10d"> D. Venus<br>
+                </ul>
+            </div>
+        </form>
+            <button class="btn">Submit</button>
+            <p id="disp"></p>
+        </div>
+        <p id="disp"></p>
+        <a href="http://localhost:5174/" target="_blank" onclick="check()" id="er">FEEDBACK LINK</a>
+           <script>
+            let visit=0;
+    document.getElementById("fm").addEventListener("submit", function (event) {
+        visit=1;
+        event.preventDefault(); 
+        window.alert("ANSWERS RECORDED SUCCESSFULLY!!!");
+        let count = 0;
+        const answers = {
+            q1: "q1a", 
+            q2: "q2b",
+            q3: "q3b",
+            q4: "q4b",
+            q5: "q5b",
+            q6: "q6b",
+            q7: "q7d",
+            q8: "q8b",
+            q9: "q9a",
+            q10: "q10b"
+        };
+        for (let key in answers) {
+            let selected = document.querySelector(`input[name="${key}"]:checked`);
+            if (selected && selected.id === answers[key]) {
+                count++;
+            }
+        }
+        document.getElementById("disp").textContent = `Your score is ${count}/10`;
+     
+    });
+    function check(){
+       if(visit==0){
+        event.preventDefault();
+        window.alert("YOU CANNOT NAVIGATE TO FEEDBACK PAGE WITHOUT ATTEMPTING THE ASSESSMENT.");
+       }
+    }
+</script>
+
+    </body>
+    </html>
+    

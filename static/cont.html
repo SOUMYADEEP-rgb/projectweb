@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            background-image: url(as.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            gap: 15px;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .card:hover {
+            cursor: pointer;
+            background-color: rgb(57, 4, 155);
+            transform: scale(1.05);
+        }
+
+        h1 {
+            color: #ffcc00;
+            font-size: 24px;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: #ff6666;
+        }
+
+        .dark-mode {
+            background-color: white;
+            color: black;
+            background-image: none;
+        }
+
+        .dark-mode .card {
+            background-color: #e0e0e0;
+            color: black;
+        }
+
+        .dark-mode .card:hover {
+            background-color: #bbb;
+        }
+
+        .toggle-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+    <div class="container">
+        <div class="card" onclick="showFact('A total solar eclipse is one of the most breathtaking celestial events!')">
+            <h1>🌞 Solar Eclipse</h1> 
+            <p>Occurs when the Moon comes between the Sun and Earth, blocking the Sun's light partially or completely.</p>
+            <h3>Types of Solar Eclipses:</h3>
+            <ul>
+                <li><strong>Total Solar Eclipse:</strong> The Sun is completely covered by the Moon.</li>
+                <li><strong>Partial Solar Eclipse:</strong> Only part of the Sun is covered.</li>
+                <li><strong>Annular Solar Eclipse:</strong> The Moon covers the Sun's center, leaving a ring of light (annulus).</li>
+            </ul>
+        </div>
+        <div class="card" onclick="showFact('A total lunar eclipse makes the Moon appear red, known as the Blood Moon!')">
+            <h1>🌕 Lunar Eclipse</h1>
+            <p>Occurs when the Earth comes between the Sun and Moon, causing Earth's shadow to fall on the Moon.</p>
+            <h3>Types of Lunar Eclipses:</h3>
+            <ul>
+                <li><strong>Total Lunar Eclipse:</strong> The entire Moon is covered by Earth's shadow, turning it red (Blood Moon).</li>
+                <li><strong>Partial Lunar Eclipse:</strong> Only a part of the Moon is covered.</li>
+                <li><strong>Penumbral Lunar Eclipse:</strong> The Moon moves through Earth's penumbral (outer) shadow, causing a slight dimming.</li>
+            </ul>
+        </div>
+    </div>
+
+    <br><br><br><br><br>
+
+    <div class="container">
+        <div class="card" onclick="showFact('Comets are sometimes called cosmic snowballs because of their icy nature!')">
+            <h1>☄️ Comets</h1>
+            <p>Celestial bodies made of ice, dust, and rock that orbit the Sun in elongated paths.</p>
+            <p>When near the Sun, they develop a glowing coma and a tail due to solar radiation. The tail always points away from the Sun due to solar wind.</p>
+        </div>
+        <div class="card" onclick="showFact('The asteroid belt lies between Mars and Jupiter and contains millions of asteroids!')">
+            <h1>🪨 Asteroids</h1>
+            <p>Small, rocky objects that orbit the Sun, mostly found in the Asteroid Belt between Mars and Jupiter.</p>
+            <p>Can be irregular in shape and vary in size from a few meters to hundreds of kilometers. Some asteroids come close to Earth and are called Near-Earth Objects (NEOs).</p>
+            <p><strong>Example:</strong> Ceres (largest asteroid and a dwarf planet).</p>
+        </div>
+    </div>
+
+    <script>
+        function showFact(fact) {
+            window.alert(fact);
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+
+</body>
+</html>

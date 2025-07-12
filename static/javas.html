@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Park Entry Form</title>
+</head>
+<body>
+    <form id="form1">
+        <label>Age:</label>
+        <input type="text" id="age" name="age"><br><br>
+        
+        <label>Category:</label>
+        <input type="radio" id="c1" name="c" value="child" onchange="validateCategory()">Child
+        <input type="radio" id="c2" name="c" value="adult" onchange="validateCategory()">Adult
+        <input type="radio" id="c3" name="c" value="senior" onchange="validateCategory()">Senior
+        <br><br>
+        
+        <label>Entry Category:</label>
+        <input type="radio" id="e1" name="e" value="college">College
+        <input type="radio" id="e2" name="e" value="family">Family
+        <br><br>
+        
+        <label>Group Size (for College Entry only):</label>
+        <input type="number" id="groupSize" name="groupSize" min="1" disabled>
+        <br><br>
+        
+        <button type="submit">SUBMIT</button>
+    </form>
+
+    <p id="feeDisplay"></p>
+    
+    <script>
+        function validateCategory() {
+            let age = parseInt(document.getElementById("age").value);
+            let categories = document.getElementsByName("c");
+            
+            for (let cat of categories) {
+                if (cat.checked) {
+                    if (cat.value === "child" && age >= 12) {
+                        alert("A child must be under 12 years old!");
+                    }
+                    if (cat.value === "senior" && age < 60) {
+                        alert("A senior must be 60 years or older!");
+                    }
+                }
+            }
+        }
+
+        document.getElementById("form1").addEventListener("submit", function(event) {
+            let age = parseInt(document.getElementById("age").value);
+            let categories = document.getElementsByName("c");
+            let entries = document.getElementsByName("e");
+            let groupSize = parseInt(document.getElementById("groupSize").value) || 1;
+            let selectedCategory = "";
+            let selectedEntry = "";
+            let fee = 0;
+            
+            if (isNaN(age) || age <= 0) {
+                alert("Please enter a valid age.");
+                event.preventDefault();
+                return;
+            }
+            for (let cat of categories) {
+                if (cat.checked) {
+                    selectedCategory = cat.value;
+                    break;
+                }
+            }
+            if (selectedCategory === "") {
+                alert("Category must be selected!");
+                event.preventDefault();
+                return;
+            }
+            for (let ent of entries) {
+                if (ent.checked) {
+                    selectedEntry = ent.value;
+                    break;
+                }
+            }
+            if (selectedEntry === "") {
+                alert("Entry category cannot be blank!");
+                event.preventDefault();
+                return;
+            }
+            if (selectedCategory === "child") {
+                fee = 300;
+            } else if (selectedCategory === "adult") {
+                if (selectedEntry === "college" && groupSize > 15) {
+                    fee = 400;
+                } else if (selectedEntry === "family") {
+                    fee = 500;
+                }
+            } else if (selectedCategory === "senior") {
+                fee = 450;
+            }
+            
+            document.getElementById("feeDisplay").innerText = "Total Entry Fee: Rs. " + fee;
+            event.preventDefault();
+        });
+
+        document.getElementsByName("e")[0].addEventListener("change", function() {
+            document.getElementById("groupSize").disabled = false;
+        });
+    </script>
+</body>
+</html>

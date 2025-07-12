@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contents</title>
+    <link rel="stylesheet" href="contentstyle.css">
+</head>
+<body>
+    <h1 align="center" style="font-size: 43px;"><strong>The Sun</strong></h1>
+    <div class="Sun sun">
+        <br>Sun is a massive ball of hot, glowing gases at the center of our solar system. It is primarily composed of hydrogen and helium, undergoing nuclear fusion to produce energy. This energy provides light and heat, essential for life on Earth. The Sun's gravity keeps all planets, asteroids, and comets in orbit.
+    </div>
+
+    <h1 align="center"><i><u>INNER PLANETS</u></i></h1>
+    <div class="whole">
+        <div class="Mer">
+            <img src="imgc5.jpeg" height="100" width="100" class="pla1 pla_img">
+            <h1 class="planet" id="Mercury">Mercury</h1>
+            <p class="desc">Mercury is the smallest planet and closest to the Sun. It has a rocky surface covered with craters and no atmosphere to retain heat.</p>
+        </div>
+        <div class="Venus">
+            <img src="imgc4.jpeg" height="100" width="100" class="pla1 pla_img">
+            <h1 class="planet" id="Venus">Venus</h1>
+            <p class="desc">Venus is similar in size to Earth but has a thick, toxic atmosphere primarily composed of carbon dioxide.</p>
+        </div>
+        <div class="Earth">
+            
+            <img src="imgc3.jpeg" height="100" width="100" class="pla pla_img">
+            <h1 class="planet" id="Earth">Earth</h1>
+            <p class="desc">Earth is the only planet known to support life, thanks to its liquid water, breathable atmosphere, and ideal distance from the Sun.</p>
+        </div>
+        <div class="Mars">
+            
+            <img src="mars.jpeg" height="100" width="100" class="pla pla_img">
+            <h1 class="planet" id="Mars">Mars</h1>
+            <p class="desc">Mars is known as the "Red Planet" due to its iron-rich surface. It has the largest volcano in the solar system, Olympus Mons.</p>
+        </div>
+    </div>
+
+    <h1 align="center"><i><u>OUTER PLANETS</u></i></h1>
+    <div class="whole1">
+        <div class="Jup">
+            <img src="jup.jpeg" height="100" width="100" class="out pla_img">
+            <h1 class="planet" id="Jupiter">Jupiter</h1>
+            <p class="desc">Jupiter is the largest planet in the solar system. Its Great Red Spot is a massive storm that has raged for centuries.</p>
+        </div>
+        <div class="Sat">
+            <img src="sat.jpeg" height="100" width="100"class="out pla_img">
+            <h1 class="planet" id="Saturn">Saturn</h1>
+            <p class="desc">Saturn is famous for its stunning ring system, made of ice, rock, and dust. It has over 140 moons, including Titan.</p>
+        </div>
+        <div class="Ura">
+            <img src="ura.jpeg" height="100" width="100"class="out pla_img">
+            <h1 class="planet" id="Uranus">Uranus</h1>
+            <p class="desc">Uranus is an ice giant with a pale blue-green color due to methane in its atmosphere. It rotates on its side.</p>
+        </div>
+        <div class="Nep">
+            <img src="nep.jpeg" height="100" width="100"class="out pla_img">
+            <h1 class="planet" id="Neptune">Neptune</h1>
+            <p class="desc">Neptune, the farthest planet from the Sun, has the strongest winds in the solar system, reaching speeds of up to 2,100 km/h.</p>
+        </div>
+    </div>
+
+    <div class="qw"><a href="cont.html" target="_blank">Next Page Content</a></div>
+
+    <script>
+        const extraContent = {
+            Mercury: "It has a very thin atmosphere, mostly made of oxygen, sodium, and hydrogen. <br> Mercury has a highly elliptical orbit, making its seasons extreme.",
+            Venus: "It has the longest rotation period of any planet in our solar system. <br> A Venusian day is longer than a Venusian year!",
+            Earth: "It has a molten iron core that generates a strong magnetic field. <br> Earth is the only planet with plate tectonics, which help regulate temperature.",
+            Mars: "It has seasonal polar ice caps made of carbon dioxide and water ice. <br> Scientists believe Mars once had vast oceans billions of years ago.",
+            Jupiter: "It has a core of rock and metal surrounded by metallic hydrogen. <br> Jupiter’s four largest moons are called the Galilean moons.",
+            Saturn: "Its rings are mostly made of tiny ice particles. <br> Saturn’s moon Enceladus has geysers that spew water into space!",
+            Uranus: "It is the coldest planet in the solar system. <br> Uranus has 13 known faint rings that are difficult to see.",
+            Neptune: "Its largest moon, Triton, orbits in the opposite direction of Neptune’s rotation. <br> Neptune's atmosphere is composed mostly of hydrogen, helium, and methane."
+        };
+
+        document.querySelectorAll(".planet").forEach(planet => {
+            planet.addEventListener("mouseover", () => {
+                planet.style.color = "red";
+
+                let extraText = `<span class="extra">${extraContent[planet.id]}</span>`;
+                planet.nextElementSibling.innerHTML += extraText;
+            });
+
+            planet.addEventListener("mouseleave", () => {
+                planet.style.color = "white";
+                
+                let extraSpan = planet.nextElementSibling.querySelector(".extra");
+                if (extraSpan) extraSpan.remove();
+            });
+
+            planet.addEventListener("click", () => {
+                let funFacts = {
+                    Mercury: "A day on Mercury lasts 176 Earth days!",
+                    Venus: "Venus rotates in the opposite direction to most planets!",
+                    Earth: "Earth is the only planet known to support life.",
+                    Mars: "Mars has the tallest volcano in the solar system!",
+                    Jupiter: "Jupiter's moon Ganymede is bigger than Mercury!",
+                    Saturn: "Saturn's rings are made mostly of ice!",
+                    Uranus: "Uranus rolls on its side like a barrel!",
+                    Neptune: "Neptune has the fastest winds in the solar system!"
+                };
+                alert(funFacts[planet.id]);
+            });
+        });
+    </script>
+</body>
+</html>

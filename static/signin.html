@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-In</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url(signini.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .head {
+            width: 100%;
+            text-align: center;
+            background-color: rgb(6, 96, 70);
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">SIGN IN</div>
+        <form id="signinForm">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" >
+
+            <label for="tel">Phone Number</label>
+            <input type="text" name="tel" id="tel">
+
+            <input type="submit" value="Sign-In">
+        </form>
+    </div>
+    <script>
+            const signInForm = document.getElementById("signinForm");
+    
+            signInForm.addEventListener("submit", function (event) {
+    
+                const email = document.getElementById("email").value;
+                const phone = document.getElementById("tel").value;
+    
+                if (!email.includes("@") || phone.length !== 10 || isNaN(phone)) {
+                    event.preventDefault();
+                    alert("Please enter a valid email and a 10-digit phone number.");
+                    return;
+                }
+    
+               
+                    alert("Sign-in successful!");
+                  
+               
+            });
+        
+    </script>
+    
+
+</body>
+</html>
