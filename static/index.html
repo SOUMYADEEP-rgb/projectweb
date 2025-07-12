@@ -5,18 +5,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solar System Magic</title>
     <link rel="icon" href="ss.jpg">
-    <link rel="stylesheet" href="hp.css">
+    <style>
+        body {
+            background-image: url('ss2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            transition: background 0.3s ease-in-out;
+        }
+        h1 {
+            font-size: 65px;
+            font-weight: bold;
+            color: white;
+            margin-top: 30px;
+        }
+        .mid {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        h2 {
+            font-size: 45px;
+            font-weight: bold;
+            color: chartreuse;
+        }
+        footer {
+            background-color: rgba(158, 195, 222, 0.9);
+            padding: 20px;
+            margin-top: 30px;
+        }
+        footer h2 {
+            font-size: 28px;
+            font-style: italic;
+            text-align: justify;
+            color: black;
+        }
+        .scrolling-text {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            background: black;
+            color: yellow;
+            font-size: 24px;
+            padding: 10px 0;
+        }
+        .scrolling-text span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll 15s linear infinite;
+        }
+        @keyframes scroll {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+        button {
+            display: grid;
+            margin: 20px auto;
+            padding: 15px 30px;
+            font-size: 19px;
+            font-weight: bold;
+            color: white;
+            background-color: darkblue;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        button:hover {
+            background-color: red;
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+        #yuf{
+            font-size: 36px;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .link {
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+        }
+    </style>
 </head>
 <body>
     <h1>WELCOME TO THE WORLD OF SOLAR SYSTEM</h1>
+    <p id="yuf"></p>
+    <div class="scrolling-text"><span>Loading Word of the Day...</span></div>
     <hr>
     <div class="mid"><h2>"Celestial Insights: Discover And Unveil The Magic Of Solar System And Eclipses"</h2></div>
     <hr><br>
-    <a href="signup.html" target="_blank"><button>Sign Up</button></a>
-    
-    
+    <div class="link">
+        <a href="signup.html" target="_blank"><button id="su">SIGN UP</button></a>
+        <a href="http://localhost:5173/" target="_blank"><button id="si">SIGN IN</button></a>
+        <a href="content.html" target="_blank"><button id="con">CONTENTS</button></a>
+        <a href="assessment.html" target="_blank"><button id="as">ASSESSMENT</button></a>
+        <a href="feedb.html" target="_blank"><button id="fb">FEEDBACK</button></a>
+    </div>
     <footer>
-    <h2>Dive into the mysteries of our Solar System, learn about the fascinating celestial phenomena, and discover how eclipses reveal the secrets of the universe. Your cosmic adventure starts here!</h2>
-</footer>
+        <h2>Dive into the mysteries of our Solar System, learn about fascinating celestial phenomena, and discover how eclipses reveal the secrets of the universe. Your cosmic adventure starts here!</h2>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let name = prompt("ENTER YOUR NAME");
+            let greetingText = document.getElementById("yuf");
+
+            if (name) {
+                greetingText.textContent = `HELLO ${name.toUpperCase().trim()}....YOUR LEARNING JOURNEY BEGINS HERE`;
+            } else {
+                greetingText.textContent = "WELCOME TO YOUR LEARNING JOURNEY!";
+            }
+
+            function confirmNavigation(event, message) {
+                if (!confirm(message)) {
+                    event.preventDefault();
+                }
+            }
+
+            document.getElementById("fb").addEventListener("click", function(event) {
+                confirmNavigation(event, "ARE YOU SURE YOU WANT TO GO TO THE FEEDBACK PAGE?");
+            });
+
+            document.getElementById("su").addEventListener("click", function(event) {
+                confirmNavigation(event, "ARE YOU SURE YOU WANT TO GO TO THE SIGN UP PAGE?");
+            });
+
+            document.getElementById("si").addEventListener("click", function(event) {
+                confirmNavigation(event, "ARE YOU SURE YOU WANT TO GO TO THE SIGNIN PAGE?");
+            });
+
+            document.getElementById("con").addEventListener("click", function(event) {
+                confirmNavigation(event, "ARE YOU SURE YOU WANT TO GO TO THE CONTENTS PAGE?");
+            });
+
+            document.getElementById("as").addEventListener("click", function(event) {
+                confirmNavigation(event, "ARE YOU SURE YOU WANT TO TAKE THE ASSESSMENT?");
+            });
+
+            const words = [
+                "Aphelion - The point in a planet's orbit farthest from the Sun.",
+                "Perihelion - The point in a planet's orbit closest to the Sun.",
+                "Nebula - A giant cloud of dust and gas in space.",
+                "Supernova - A stellar explosion that briefly outshines an entire galaxy.",
+                "Exoplanet - A planet that orbits a star outside our solar system.",
+                "Gravity Assist - A method used to accelerate a spacecraft using a planet's gravity."
+            ];
+
+            let randomIndex = Math.floor(Math.random() * words.length);
+            document.querySelector(".scrolling-text span").textContent = `Word of the Day: ${words[randomIndex]}`;
+        });
+    </script>
 </body>
 </html>
